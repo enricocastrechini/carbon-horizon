@@ -8,7 +8,7 @@ The platform addresses the fragmentation of current carbon credit ecosystems and
 
 ## ✨ Core Features
 * **Automated Data Acquisition (Sensor Fusion):** Combines Sentinel-2 optical imagery (for vegetation indices and chlorophyll content) with Sentinel-1 Synthetic Aperture Radar (SAR) to penetrate cloud cover, guaranteeing continuous, all-weather monitoring of biomass and land-use changes.
-* **AI-Powered Processing:** Utilizes High Performance Computer (HPC) alongside artificial intelligence models. It applies random-forest regression for autonomous biomass calculation and Convolutional Neural Networks (CNN) for environmental change detection.
+* **AI-Powered Processing:** Utilizes Leonardo's Davinci-1 High Performance Computer (HPC) alongside artificial intelligence models. It applies random-forest regression for autonomous biomass calculation and Convolutional Neural Networks (CNN) for environmental change detection.
 * **Blockchain Integrity Layer:** Acts as a digital notary by generating a unique digital token via a smart contract for every verified ton of sequestered carbon, ensuring data immutability and permanently eliminating the risk of double-counting.
 * **Regulatory Compliance-by-Design:** Supports the EU Emissions Trading System (EU ETS), including maritime transport, and aligns with the Carbon Removal Certification Framework (CRCF) and national bodies like MASE and ISPRA.
 
