@@ -1,4 +1,4 @@
-# 🌍 Carbon Horizon — React portfolio site
+# 🌍 Carbon Horizon
 > Expanding The Frontier Of Trusted Climate Solutions. A responsive React + Vite portfolio page for presenting the Carbon Horizon executive-master capstone as a public-safe case study.
 
 ## 📖 Overview
