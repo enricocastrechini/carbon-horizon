@@ -1,0 +1,50 @@
+{
+  "collection": "sentinel-2-l2a",
+  "tile": "32TPP",
+  "attribution": "Contains modified Copernicus Sentinel data (2024, 2025), accessed through Element 84 Earth Search / AWS Open Data.",
+  "note": "Whole-tile RGB previews for visual exploration; not analysis-ready bands or measured carbon outcomes.",
+  "scenes": [
+    {
+      "id": "S2B_32TPP_20240731_0_L2A",
+      "datetime": "2024-07-31T10:18:43.695000Z",
+      "cloudCover": 0.581913,
+      "bbox": [
+        10.232045199107374,
+        43.23561023331161,
+        11.62663306682227,
+        44.24654179621102
+      ],
+      "image": "scene-1.jpg",
+      "previewUrl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2024/7/S2B_32TPP_20240731_0_L2A/thumbnail.jpg",
+      "itemUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_32TPP_20240731_0_L2A",
+      "sha256": "d848d1cbba26407b1c1daf2f0bc25fd49a0bfaf2c3a32ae682f07025a3b66d65",
+      "assets": {
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2024/7/S2B_32TPP_20240731_0_L2A/B08.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2024/7/S2B_32TPP_20240731_0_L2A/B04.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2024/7/S2B_32TPP_20240731_0_L2A/SCL.tif",
+        "visual": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2024/7/S2B_32TPP_20240731_0_L2A/TCI.tif"
+      }
+    },
+    {
+      "id": "S2C_32TPP_20250711_0_L2A",
+      "datetime": "2025-07-11T10:19:06.073000Z",
+      "cloudCover": 0.722161,
+      "bbox": [
+        10.232045,
+        43.23561,
+        11.626633,
+        44.246542
+      ],
+      "image": "scene-2.jpg",
+      "previewUrl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2025/7/S2C_32TPP_20250711_0_L2A/preview.jpg",
+      "itemUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_32TPP_20250711_0_L2A",
+      "sha256": "28703767e6410bbb71913da23e7c244c275bdd4cf10082b8420f091e3d6c6751",
+      "assets": {
+        "nir": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2025/7/S2C_32TPP_20250711_0_L2A/B08.tif",
+        "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2025/7/S2C_32TPP_20250711_0_L2A/B04.tif",
+        "scl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2025/7/S2C_32TPP_20250711_0_L2A/SCL.tif",
+        "visual": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/32/T/PP/2025/7/S2C_32TPP_20250711_0_L2A/TCI.tif"
+      }
+    }
+  ]
+}

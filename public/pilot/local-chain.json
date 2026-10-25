@@ -1,0 +1,100 @@
+{
+  "schema": "carbon-horizon-local-chain/v1",
+  "network": "Ephemeral local EthereumJS EVM",
+  "chainId": 1337,
+  "publicTestnet": false,
+  "ephemeral": true,
+  "contract": "0xae519fc2ba8e6ffe6473195c092bf1bae986ff90",
+  "reportSha256": "5024172fe7a95145d76653998fd9791a2bbddc5fc1d999d7c86e3d33ec5f8736",
+  "contractSourceSha256": "39f9739ebeb3b714363c8048d4f75c57d6bad95e1a93a7c9825fab8d1ecae907",
+  "compiler": "0.8.36+commit.8a079791.Emscripten.clang",
+  "projectVintage": "0xad1999d3db49f44b8863e3be352e166fde901ec67a985b033e1f6a1447727840",
+  "testUnitsIssued": 1,
+  "outstanding": 0,
+  "retired": 1,
+  "transactions": [
+    {
+      "action": "Anchor",
+      "hash": "0xd26530b5493fbe16d1dec0aa2b98ec86de1c02056ec5c5ac4ad71b66b677223e",
+      "blockNumber": 4,
+      "blockHash": "0xcb87d395ee25394f8da7c08df079932c1ed11d679e4835b22d318e6fee172fbc",
+      "status": 1,
+      "gasUsed": "46123"
+    },
+    {
+      "action": "Approve",
+      "hash": "0xabd72df733a864f8c213adcdb814eb616d8343c3208b68bba2167a28c77c994e",
+      "blockNumber": 8,
+      "blockHash": "0x679a43efa1e8337014f204671735b04ce86bb83db24cd32cc3cff6a480f25134",
+      "status": 1,
+      "gasUsed": "47955"
+    },
+    {
+      "action": "Issue test unit",
+      "hash": "0x9f09641024890d89f486490b7225db8ea11c9bd5be8c9a5c756938db23a80a21",
+      "blockNumber": 11,
+      "blockHash": "0xe9d55b8fbc2ac1161fccfd67fd39e69824f3f99c5bbfdcf300091bd3e7aaea26",
+      "status": 1,
+      "gasUsed": "94423"
+    },
+    {
+      "action": "Retire test unit",
+      "hash": "0x262ff503a3ac2c17f9aa1334569114b6f65c93dd4ff486c36a0e7d326bd91b43",
+      "blockNumber": 15,
+      "blockHash": "0xe0f4c761d1aff47655946aaf3eb1ce965550c207bcda7eff6cf6dbeeef3a8382",
+      "status": 1,
+      "gasUsed": "46994"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Cannot approve absent evidence",
+      "passed": true
+    },
+    {
+      "name": "Reject an empty digest",
+      "passed": true
+    },
+    {
+      "name": "Reject duplicate anchoring",
+      "passed": true
+    },
+    {
+      "name": "Reviewer role is enforced",
+      "passed": true
+    },
+    {
+      "name": "Issuance requires review",
+      "passed": true
+    },
+    {
+      "name": "Issuance requires reviewer role",
+      "passed": true
+    },
+    {
+      "name": "Reject zero-unit issuance",
+      "passed": true
+    },
+    {
+      "name": "Reject duplicate project/vintage issuance",
+      "passed": true
+    },
+    {
+      "name": "Reject reusing evidence under another project key",
+      "passed": true
+    },
+    {
+      "name": "Retirement requires reviewer role",
+      "passed": true
+    },
+    {
+      "name": "Reject reuse after retirement",
+      "passed": true
+    },
+    {
+      "name": "Altered report does not match the anchored digest",
+      "passed": true
+    }
+  ],
+  "note": "Recorded from actual signed transactions in locally built EVM blocks. In-memory state is discarded after the run; rerun to verify. One arbitrary test unit is used for mechanics, not a carbon quantity. No public-chain anchoring or accredited review."
+}

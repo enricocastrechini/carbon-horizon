@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Regulation, BusinessModel, ValidationRisks } from './Strategy.jsx';
+import { ExperienceMotion, OurWork } from './Experience.jsx';
+import PilotLab from './PilotLab.jsx';
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, Satellite, ScanSearch,
   Fingerprint, ChartNoAxesCombined, Leaf, ShieldCheck, Globe2,
-  Layers3, Compass, ExternalLink, Menu
+  Layers3, Compass, ExternalLink, Menu, X
 } from 'lucide-react';
 
 const sdgs = [
@@ -31,7 +34,7 @@ const capabilities = [
     n: '01',
     title: 'Observe',
     subtitle: 'Earth observation',
-    body: 'Optical and radar satellite data can provide complementary views of the environment and its changes over time.',
+    body: 'Combine Sentinel-2 vegetation indices with Sentinel-1 radar observations to reduce cloud-related gaps. Revisit intervals and sensor limitations still constrain coverage.',
     icon: Satellite,
     tags: ['Sentinel-2 · Optical', 'Sentinel-1 · Radar'],
   },
@@ -39,23 +42,23 @@ const capabilities = [
     n: '02',
     title: 'Analyse',
     subtitle: 'AI + high-performance computing',
-    body: 'Machine learning and scalable computing could support environmental analysis, including biomass-related estimation and land-use change detection.',
+    body: 'The study proposes random-forest biomass estimation and CNN-based change detection on HPC infrastructure. Field calibration and uncertainty assessment remain necessary.',
     icon: ScanSearch,
-    tags: ['Machine learning', 'Geospatial analytics'],
+    tags: ['Random forest · Biomass', 'CNN · Change detection'],
   },
   {
     n: '03',
     title: 'Trace',
     subtitle: 'Evidence & integrity',
-    body: 'Digital records and audit-oriented workflows could help make evidence easier to inspect, compare and trace.',
+    body: 'The proposed blockchain layer records evidence and unit lifecycle events. Its integrity depends on verified inputs, registry coordination and appropriate governance.',
     icon: Fingerprint,
-    tags: ['Digital traceability', 'Auditability'],
+    tags: ['Evidence provenance', 'Issuance · Retirement'],
   },
   {
     n: '04',
     title: 'Inform',
     subtitle: 'Decision support',
-    body: 'Clearer, more accessible information could support reporting workflows and better-informed stakeholder decisions.',
+    body: 'Provide evidence packages for independent review, reporting and stakeholder decisions. Certification and credit issuance follow the applicable methodology and programme.',
     icon: ChartNoAxesCombined,
     tags: ['Reporting workflows', 'Stakeholder review'],
   },
@@ -101,42 +104,48 @@ function Architecture() {
 }
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
   return (
     <>
-      <header className="site-header">
+      <ExperienceMotion />
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <header className="site-header" onKeyDown={event => { if (event.key === 'Escape' && menuOpen) { closeMenu(); document.querySelector('.menu-toggle').focus(); } }}>
         <a className="brand" href="#top" aria-label="Carbon Horizon home">
           <span className="brand-symbol"><Globe2 size={19} /></span>
           <span>CARBON<span className="brand-light">HORIZON</span></span>
         </a>
-        <nav className="desktop-nav">
-          <a href="#challenge">The challenge</a>
+        <nav id="main-navigation" aria-label="Main navigation" className={`desktop-nav${menuOpen ? ' is-open' : ''}`} onClick={closeMenu}>
+          <a href="#work">Our work</a>
           <a href="#approach">The approach</a>
-          <a href="#impact">SDG alignment</a>
-          <a href="#roadmap">Next steps</a>
+          <a href="#demo">Feasibility lab</a>
+          <a href="#business">The strategy</a>
+          <a href="#about">The team</a>
         </nav>
-        <a className="header-cta" href="#about">Project overview <ArrowUpRight size={15} /></a>
+        <button className="menu-toggle" type="button" aria-controls="main-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} onClick={() => setMenuOpen(!menuOpen)} onKeyDown={event => { if (event.key === 'Escape') closeMenu(); }}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
+        <a className="header-cta" href="#demo">Explore the demo <ArrowUpRight size={15} /></a>
       </header>
 
-      <main id="top">
+      <main id="main-content">
+        <div id="top" />
         <section className="hero">
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-content">
-            <div className="eyebrow"><span className="eyebrow-line" /> CLIMATE INNOVATION / CAPSTONE PROJECT</div>
-            <h1>Climate data<br />you can <em>trust.</em></h1>
+            <div className="eyebrow"><span className="eyebrow-line" /> SPACE DATA. INTELLIGENCE. INTEGRITY.</div>
+            <h1>From space.<br />To <em>climate trust.</em></h1>
             <p className="hero-lead">
-              Exploring how satellite Earth observation, artificial intelligence and digital traceability
-              could support more transparent carbon monitoring, reporting and verification.
+              We explored how satellites, AI and digital traceability could turn environmental signals into evidence people can inspect. Discover the study. Explore the first working demo.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#approach">Explore the concept <ArrowDownRight size={17} /></a>
-              <a className="text-link" href="#about">About the project <ArrowRight size={15} /></a>
+              <a className="button button-primary" href="#demo">Enter the feasibility lab <ArrowDownRight size={17} /></a>
+              <a className="text-link" href="#work">Explore our work <ArrowRight size={15} /></a>
             </div>
             <div className="hero-foot">
-              <span><i className="status-dot" /> STRATEGIC FEASIBILITY CONCEPT</span>
-              <span className="mono">SDG 13 · SDG 9 · SDG 16</span>
+              <span><i className="status-dot" /> STRATEGIC STUDY + INTERACTIVE PROTOTYPE</span>
+              <span className="mono">OBSERVE → ANALYSE → TRACE</span>
             </div>
           </div>
-          <div className="hero-art" aria-label="Abstract satellite observation graphic">
+          <div className="hero-art" aria-label="Satellite observation concept graphic">
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
             <div className="orbit orbit-three" />
@@ -149,14 +158,18 @@ function App() {
             <div className="satellite-mark"><Satellite size={25} strokeWidth={1.25} /></div>
             <div className="art-label label-top"><span className="mono">EO / 01</span><b>EARTH OBSERVATION</b></div>
             <div className="art-label label-bottom"><span className="mono">AI + MRV</span><b>FROM SIGNAL TO EVIDENCE</b></div>
-            <div className="coordinate mono">45° 27' N<br />9° 11' E</div>
+            <div className="coordinate mono">36° 08' N<br />27° 58' E</div>
+            <a className="hero-scene-card" href="#demo"><img src={`${import.meta.env.BASE_URL}pilot/after-rgb.png`} alt="Computed Sentinel-2 crop of the Rhodes wildfire pilot" /><span><span className="mono">RHODES / REAL OPTICAL + RADAR</span><b>Your first look at the lab <ArrowUpRight size={14} /></b></span></a>
           </div>
-          <div className="hero-index mono">01 — 05</div>
+          <div className="hero-index mono">01 — 07</div>
         </section>
 
         <section className="ticker" aria-label="Project themes">
           <div><span>EARTH OBSERVATION</span><i>✳</i><span>ARTIFICIAL INTELLIGENCE</span><i>✳</i><span>CLIMATE INTEGRITY</span><i>✳</i><span>TRUSTED DATA</span><i>✳</i><span>EARTH OBSERVATION</span></div>
         </section>
+
+        <OurWork />
+        <PilotLab />
 
         <section className="section challenge-section" id="challenge">
           <div className="section-label"><span className="mono">01 / THE CHALLENGE</span><span className="section-rule" /></div>
@@ -188,8 +201,11 @@ function App() {
           </div>
         </section>
 
+        <Regulation />
+        <BusinessModel />
+
         <section className="section impact-section" id="impact">
-          <div className="section-label"><span className="mono">03 / INTENDED CONTRIBUTION</span><span className="section-rule" /></div>
+          <div className="section-label"><span className="mono">05 / INTENDED CONTRIBUTION</span><span className="section-rule" /></div>
           <div className="section-heading-row">
             <h2>Designed around<br /><em>the SDGs.</em></h2>
             <p className="section-intro">The project explores potential contribution pathways. These are not claims of verified or measured environmental impact.</p>
@@ -211,11 +227,11 @@ function App() {
         </section>
 
         <section className="section roadmap-section" id="roadmap">
-          <div className="section-label"><span className="mono">04 / FROM CONCEPT TO PILOT</span><span className="section-rule" /></div>
+          <div className="section-label"><span className="mono">06 / FROM CONCEPT TO PILOT</span><span className="section-rule" /></div>
           <div className="two-col roadmap-top">
             <h2>Credibility is<br />built through <em>validation.</em></h2>
             <div className="section-copy">
-              <p className="copy-large">A promising concept needs to earn trust through testing, governance and real user feedback—not jump straight from a presentation to claims of impact.</p>
+              <p className="copy-large">The study identifies data accuracy, organisational integration, regulatory compliance and market acceptance as central risks. Each needs a clear validation gate before scaling.</p>
             </div>
           </div>
           <div className="roadmap-list">
@@ -228,6 +244,7 @@ function App() {
               </div>
             ))}
           </div>
+          <ValidationRisks />
           <div className="pilot-banner">
             <div><span className="mono">THE NEXT MEANINGFUL MILESTONE</span><h3>A tightly scoped, independently evaluated pilot.</h3></div>
             <p>Defined users. Reference data. Transparent uncertainty. Clear criteria for accuracy, cost, usability and auditability.</p>
@@ -235,7 +252,7 @@ function App() {
         </section>
 
         <section className="section about-section" id="about">
-          <div className="section-label"><span className="mono">05 / THE PERSPECTIVE</span><span className="section-rule" /></div>
+          <div className="section-label"><span className="mono">07 / THE PROJECT</span><span className="section-rule" /></div>
           <div className="about-layout">
             <div>
               <h2>Bridging technology<br />and <em>implementation.</em></h2>
@@ -243,10 +260,14 @@ function App() {
             </div>
             <div className="about-copy">
               <p className="copy-large">Carbon Horizon was developed as a multidisciplinary capstone during an Executive Master in Advanced Management at LUISS Business School.</p>
-              <p>My background combines computer engineering and artificial intelligence, applied AI research, and management education. I am interested in the space between technical possibility and real-world adoption: understanding the problem, assessing trade-offs, aligning stakeholders and turning a technology concept into a testable plan.</p>
-              <p className="muted">My role in the team focused on the technology dimension—connecting the proposed solution to its underlying technical building blocks and assessing how they could fit together. The concept remains a strategic study, not a deployed platform.</p>
+              <p>The study connects market analysis, EU carbon-market regulation, satellite and AI architecture, stakeholder mapping and revenue design. It proposes Leonardo as an industrial enabler, drawing on space capabilities and the davinci-1 high-performance computer. This is a proposed strategic fit, not a confirmed partnership or implementation.</p>
+              <p className="muted">Developed by Alberto Schierano, Alessandro Rossi, Enrico Castrechini, Jacob Pompe and Nicolò Raponi. This page describes the collective study; individual responsibilities are not attributed in the source materials.</p>
               <div className="about-tags"><span>Computer Engineering</span><span>Artificial Intelligence</span><span>Technology Strategy</span></div>
             </div>
+          </div>
+          <div className="study-sources">
+            <span className="mono">ABOUT THE SOURCE MATERIAL</span>
+            <p>Based on the Carbon Horizon final report and 26-slide presentation, <em>Expanding the Frontier of Trusted Climate Solutions</em>. This case study summarises the proposal and its validation needs; it does not reproduce the internal documents or present proposed capabilities as measured results.</p>
           </div>
         </section>
 

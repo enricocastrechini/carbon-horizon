@@ -1,0 +1,346 @@
+{
+  "schema": "carbon-horizon-pilot/v1",
+  "config": {
+    "id": "rhodes-2023-pilot",
+    "title": "Rhodes wildfire \u00c2\u00b7 July 2023",
+    "bbox": [
+      27.9,
+      36.08,
+      28.02,
+      36.2
+    ],
+    "comparisonBbox": [
+      27.9,
+      36.17,
+      27.925,
+      36.195
+    ],
+    "crs": "EPSG:32635",
+    "resolution": 20,
+    "eventDate": "2023-07-18",
+    "eventSource": "https://mapping.emergency.copernicus.eu/activations/EMSN159/",
+    "optical": [
+      "S2A_T35SNA_20230708T085008_L2A",
+      "S2B_T35SNA_20230802T084950_L2A"
+    ],
+    "radar": [
+      "S1A_IW_GRDH_1SDV_20230717T041612_20230717T041637_049458_05F27A_rtc",
+      "S1A_IW_GRDH_1SDV_20230729T041613_20230729T041638_049633_05F7E5_rtc"
+    ],
+    "validScl": [
+      4,
+      5,
+      6
+    ],
+    "vegetationNdvi": 0.35,
+    "changeDnbr": 0.27,
+    "minimumValidFraction": 0.8,
+    "note": "Exploratory rectangular AOI, not a certified project boundary or official fire perimeter. Thresholds are illustrative spectral rules, not trained AI or validated burn severity."
+  },
+  "grid": {
+    "crs": "EPSG:32635",
+    "resolution": 20,
+    "width": 547,
+    "height": 672,
+    "bounds": [
+      580900,
+      3993180,
+      591840,
+      4006620
+    ],
+    "transform": [
+      20.0,
+      0.0,
+      580900.0,
+      0.0,
+      -20.0,
+      4006620.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "quality": [
+    {
+      "date": "2023-07-08T09:00:20.745000Z",
+      "validFraction": 0.9739886001825752,
+      "sceneCloudCover": 0.029514
+    },
+    {
+      "date": "2023-08-02T09:00:20.321000Z",
+      "validFraction": 0.9550380736089774,
+      "sceneCloudCover": 0.013581
+    }
+  ],
+  "pairedValidFraction": 0.9385339434016877,
+  "analysisAreaHa": 14372.16,
+  "vegetationAreaHa": 6078.96,
+  "flaggedAreaHa": 3765.12,
+  "meanNdviBefore": 0.5991679430007935,
+  "meanNdviAfter": 0.3212352693080902,
+  "method": "SCL-masked NDVI/NBR; exploratory dNBR rule, no trained AI",
+  "biomass": null,
+  "carbon": null,
+  "independentValidation": false,
+  "blockchain": "Not anchored",
+  "attribution": "Contains modified Copernicus Sentinel data (2023). Optical via Element 84 Earth Search; Sentinel-1 RTC via Microsoft Planetary Computer (RTC processing: Microsoft, CC-BY-4.0).",
+  "sources": [
+    {
+      "id": "S2A_T35SNA_20230708T085008_L2A",
+      "sensor": "Sentinel-2 L2A",
+      "date": "2023-07-08T09:00:20.745000Z",
+      "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2A_T35SNA_20230708T085008_L2A",
+      "offsetAlreadyApplied": null,
+      "assets": {
+        "red": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/7/S2A_T35SNA_20230708T085008_L2A/B04.tif",
+          "cropSha256": "2c98234444bd69ee2895a506c7a68b1545a91ea5bf5886350772b0c4a01d1865",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "green": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/7/S2A_T35SNA_20230708T085008_L2A/B03.tif",
+          "cropSha256": "8ca26c2134c91386901b80a0755d2f2f6e6130ddcd00ef3f79e84cc37feff192",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "blue": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/7/S2A_T35SNA_20230708T085008_L2A/B02.tif",
+          "cropSha256": "be207b548a16bce6056e5827552b46b32cb74fb51aceb44e5c41909c7526668c",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "nir": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/7/S2A_T35SNA_20230708T085008_L2A/B08.tif",
+          "cropSha256": "ca47d72c411b36075361a6ab79a0d6e42e9f3e62d4b54d407790b9230fa7f1b3",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "swir22": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/7/S2A_T35SNA_20230708T085008_L2A/B12.tif",
+          "cropSha256": "6ce8c20797ddee60743df4ba00dea5c5923d1122bce078ff8ff88bf43f6e7b15",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "scl": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/7/S2A_T35SNA_20230708T085008_L2A/SCL.tif",
+          "cropSha256": "a8049c45de2d2528419f885ddfdd89273309b0249bd3a14756a5800724ab51b2",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint8",
+              "spatial_resolution": 20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "S2B_T35SNA_20230802T084950_L2A",
+      "sensor": "Sentinel-2 L2A",
+      "date": "2023-08-02T09:00:20.321000Z",
+      "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-c1-l2a/items/S2B_T35SNA_20230802T084950_L2A",
+      "offsetAlreadyApplied": null,
+      "assets": {
+        "red": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/8/S2B_T35SNA_20230802T084950_L2A/B04.tif",
+          "cropSha256": "549d5ebd6cfb18915f9a45019b031396d01fad289aa2953c6a91ccde9d98bb9c",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "green": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/8/S2B_T35SNA_20230802T084950_L2A/B03.tif",
+          "cropSha256": "945615082941336b5ad3612926bdcc87136b409d030fad4049568db601745f5f",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "blue": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/8/S2B_T35SNA_20230802T084950_L2A/B02.tif",
+          "cropSha256": "8d8c09b57e82f90d7877afa8d17ffddcf84d271076808418b2c90ca841e71488",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "nir": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/8/S2B_T35SNA_20230802T084950_L2A/B08.tif",
+          "cropSha256": "e50e9432e574958058d4b1b7e29b898b1f429af5bc80e0392ec2182bb135f475",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 10,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "swir22": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/8/S2B_T35SNA_20230802T084950_L2A/B12.tif",
+          "cropSha256": "efa30d5f5f8d0b899f1f0e4981855ffa0efcc89440219d1c82b7e5b9f0475cd1",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint16",
+              "spatial_resolution": 20,
+              "scale": 0.0001,
+              "offset": -0.1
+            }
+          ]
+        },
+        "scl": {
+          "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/35/S/NA/2023/8/S2B_T35SNA_20230802T084950_L2A/SCL.tif",
+          "cropSha256": "a1c8aa923b4342b07408c621813c712fa161a0376e8bdab4f14ba48880862bf3",
+          "raster": [
+            {
+              "nodata": 0,
+              "data_type": "uint8",
+              "spatial_resolution": 20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "S1A_IW_GRDH_1SDV_20230717T041612_20230717T041637_049458_05F27A_rtc",
+      "sensor": "Sentinel-1 RTC",
+      "date": "2023-07-17T04:16:25.356326Z",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20230717T041612_20230717T041637_049458_05F27A_rtc",
+      "relativeOrbit": 36,
+      "direction": "descending",
+      "validFraction": 1.0,
+      "assets": {
+        "vv": {
+          "url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/7/17/IW/DV/S1A_IW_GRDH_1SDV_20230717T041612_20230717T041637_049458_05F27A_10CF/measurement/iw-vv.rtc.tiff",
+          "cropSha256": "bd39a5b1eaebb76a904fe082293282a4d3941ee5a15bb906c680e779859324f6"
+        },
+        "vh": {
+          "url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/7/17/IW/DV/S1A_IW_GRDH_1SDV_20230717T041612_20230717T041637_049458_05F27A_10CF/measurement/iw-vh.rtc.tiff",
+          "cropSha256": "5575d48a6e405a9c01fe8701dc0d8abd656b14778676a6bb3f2dbf2ae32a3e8b"
+        }
+      }
+    },
+    {
+      "id": "S1A_IW_GRDH_1SDV_20230729T041613_20230729T041638_049633_05F7E5_rtc",
+      "sensor": "Sentinel-1 RTC",
+      "date": "2023-07-29T04:16:25.947191Z",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20230729T041613_20230729T041638_049633_05F7E5_rtc",
+      "relativeOrbit": 36,
+      "direction": "descending",
+      "validFraction": 1.0,
+      "assets": {
+        "vv": {
+          "url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/7/29/IW/DV/S1A_IW_GRDH_1SDV_20230729T041613_20230729T041638_049633_05F7E5_FDBA/measurement/iw-vv.rtc.tiff",
+          "cropSha256": "c1ee34b5b4674de6ab1c7d6c98c436fc6e208617c625956acc554b4e060ba937"
+        },
+        "vh": {
+          "url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/7/29/IW/DV/S1A_IW_GRDH_1SDV_20230729T041613_20230729T041638_049633_05F7E5_FDBA/measurement/iw-vh.rtc.tiff",
+          "cropSha256": "e1bbc63229a15d520d19feaecd7ae0855f250816a76e02f66040c53f1b10fe2e"
+        }
+      }
+    }
+  ],
+  "files": {
+    "before-ndvi.tif": "bf33518b29464cbff45664dedcf4136bcc20196487504298ebc307331372e05f",
+    "before-nbr.tif": "b3b245b0609fd30caf22beaf4ac4f86835abb7375899a8ae0e98c8c6ec17a2a8",
+    "before-quality.tif": "cb3b35f64af76f4c6d1a525cb02b2a5d56c944a43bd36eb070161a04cc311f59",
+    "before-rgb.png": "9ac365dc441640e3b1ec4338e38cefcc0f4360b52db3d81172bb873031ce5312",
+    "before-false-colour.png": "4639be81ff2b9addbb88226e02208e5ff3aa59ccf7deb8a8e822623a9ba7bfbd",
+    "before-ndvi.png": "5f6d77a2b3785665e92fa05cb62f3ee7d164acb4c971d5b63021fcf575800a05",
+    "after-ndvi.tif": "fef611a971efe72d4429ab675ab7e088c962664c7fdfa8b2952efba003db1426",
+    "after-nbr.tif": "e4dc4147f6c21ee8d1d71e1d47d7c5f93578d692acc00b484fd79c8a1d9e5ab9",
+    "after-quality.tif": "65268ae6708ee934430a69e3cd75e0d0ab2e22793ba15d90a71e60abcdf3f374",
+    "after-rgb.png": "306a2b17c093ebf9b846a7538d60a8b74422b508c6a165322f751617161a7afc",
+    "after-false-colour.png": "af35bcfdcf8b3ef918606d9205035cc54f080b3ab6477ee6d59e4ceff91d3ea1",
+    "after-ndvi.png": "e7f5ee7ec99ce8770243ca0da250ac7cce9c3986e83e7fee0c2bbd6d0c5f74ad",
+    "dnbr.tif": "ca8b41ae7755ac08d44ba2cf9f0161e72599c7b5454a0c499383391ad2419a4a",
+    "change.png": "bc4bad8e8b8c55d4496f56436972ce907fcdcba25df627f1856d280cbf20c889",
+    "before-vv.tif": "39ad06ea947dbb57efb78dea6a9ca860def9483c5ab8ad1e879564d39d4253dd",
+    "before-vh.tif": "2029d7b03808f2e7b507368c4c1f20a054c71102079872698cb69040388882fe",
+    "before-radar.png": "e3e7cfe873ed75ff3afa2a6dd81604407bef10687890ee881f6ff29adada0540",
+    "after-vv.tif": "25d3aa6f0928a96edd7b4006e9687f7f70c987a0ac34842a52e6d15914d6ee8f",
+    "after-vh.tif": "c94bc699ff2563cb7df379e22ce5b1ab22772313fe5ace66279a779d0bf0758e",
+    "after-radar.png": "173acd26d73fb78811f8c8de20a8c3c97d6594bc712a4e05016a66af1ba879ff",
+    "aoi.geojson": "ece77332295af0fe4a5911415ecfbb184a55cb2b92812e93c38c6f0d0123a5f6"
+  },
+  "configSha256": "eff1e3582134ab5a990ce594126a8cb840c0a45edcb13a7efb12e6c090c518c0",
+  "codeSha256": "075558f7713e6a6fa54b0434e49850813dbd77633a48b75b6e8cd13750a3217f",
+  "software": {
+    "numpy": "2.5.4",
+    "rasterio": "1.5.2",
+    "gdal": "3.12.2"
+  },
+  "limitations": [
+    "Rectangle is not a forest inventory or official fire perimeter.",
+    "Flagged area is not validated burned area or carbon loss.",
+    "Optical and radar are aligned and displayed together; no learned sensor fusion has been evaluated.",
+    "No biomass inference, credit certification or public-chain anchoring."
+  ],
+  "comparisonWindow": {
+    "bbox": [
+      27.9,
+      36.17,
+      27.925,
+      36.195
+    ],
+    "vegetationAreaHa": 177.0,
+    "meanNdviBefore": 0.6163027286529541,
+    "meanNdviAfter": 0.6104421615600586,
+    "flaggedAreaHa": 0.0,
+    "note": "Exploratory within-scene comparison window, selected visually; not independent validation or a certified control forest."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "rhodes-2023-pilot",
+  "title": "Rhodes wildfire · July 2023",
+  "bbox": [27.90, 36.08, 28.02, 36.20],
+  "comparisonBbox": [27.90, 36.17, 27.925, 36.195],
+  "crs": "EPSG:32635",
+  "resolution": 20,
+  "eventDate": "2023-07-18",
+  "eventSource": "https://mapping.emergency.copernicus.eu/activations/EMSN159/",
+  "optical": ["S2A_T35SNA_20230708T085008_L2A", "S2B_T35SNA_20230802T084950_L2A"],
+  "radar": ["S1A_IW_GRDH_1SDV_20230717T041612_20230717T041637_049458_05F27A_rtc", "S1A_IW_GRDH_1SDV_20230729T041613_20230729T041638_049633_05F7E5_rtc"],
+  "validScl": [4, 5, 6],
+  "vegetationNdvi": 0.35,
+  "changeDnbr": 0.27,
+  "minimumValidFraction": 0.8,
+  "note": "Exploratory rectangular AOI, not a certified project boundary or official fire perimeter. Thresholds are illustrative spectral rules, not trained AI or validated burn severity."
+}
